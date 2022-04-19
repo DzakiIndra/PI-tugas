@@ -20,7 +20,7 @@ app.get('/api/customers', (req, res) => {
 
 })
 
-app.get('/api/customers/:id', (req, res) => {
+app.post('/api/customers/:id', (req, res) => {
     const customer = customers.find(c => c.id == parseInt(req.params.id));
     if (!customer) {
         res.status(404).send('Id not found !')
